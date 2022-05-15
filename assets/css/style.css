@@ -1,0 +1,37 @@
+/* ----- RESET ----- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url(../images/clouds-g757511131_1920.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+* {
+    font-size: calc(2vmin + 15px);
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+}
+li {
+    list-style-type: none;
+}
+
+
+/* ----- FONTS ----- */
+
+* {
+    font-family: 'Nova Square', cursive, sans-serif;
+}
