@@ -13,10 +13,6 @@ body {
     height: 100vh;
 }
 
-* {
-    font-size: calc(2vmin + 15px);
-}
-
 a {
     text-decoration: none;
 }
@@ -33,5 +29,103 @@ li {
 /* ----- FONTS ----- */
 
 * {
-    font-family: 'Nova Square', cursive, sans-serif;
+    font-family: 'Alata', cursive, sans-serif;
+    font-size: calc(1vmin + 10px);
+
+}
+
+/* ----- BODY ----- */
+
+
+/* ----- HEADER ----- */
+header {
+    height: 120px;
+    background-color: rgba(133, 205, 221, .7);
+    border-bottom: solid #fff 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-family: 'Fredoka One', cursive, sans-serif;
+    color: #fff;
+    font-size: calc(2vmin + 20px);
+    font-weight: 100;
+    text-align: center;
+    margin: 0 10px;
+}
+
+/* ----- SEARCH CONTAINER ----- */
+
+.search-container {
+    display: flex;
+    margin: 30px 5vw;
+    background-color: rgba(133, 205, 221, .7);
+    border: #fff solid 3px;
+    padding: 10px;
+    width: 90vw;
+    max-width: 600px;
+    height: 70px;
+}
+
+.search-container .search-input {
+    display: flex;
+    flex-wrap: nowrap;
+    margin-right: 10px;
+    width: 100%;
+}
+
+.search-container .search-input input {
+    width: 100%;
+    font-size: calc(1.5vmin + 15px);
+    padding-left: 10px;
+    color: #fff;
+    background-color: rgba(95, 149, 232, .7);
+    border: #fff solid 3px;
+}
+
+.search-container .search-input button {
+    background-color: rgba(0, 71, 255, .7);
+    color: #fff;
+    padding: 0 10px;
+    border: #fff solid 3px;
+    cursor: pointer;
+}
+
+.search-container .geoloc {
+    background-color: rgba(0, 71, 255, .7);
+    border-radius: 100%;
+    border: #fff solid 3px;
+    cursor: pointer;
+}
+
+.search-container button i {
+    color: #fff;
+    padding: 7px 10px;
+    border-radius: 100%;
+}
+
+.display-city {
+    display: flex;
+    margin: 30px 5vw;
+    background-color: rgba(133, 205, 221, .7);
+    border: #fff solid 3px;
+    padding: 10px;
+    width: 90vw;
+    max-width: 600px;
+    height: 70px;
+}
+
+.display-city h2 {
+    width: 100%;
+    color: #fff;
+    background-color: rgba(95, 149, 232, .7);
+    border: #fff solid 3px;
+    padding: 0 10px;
+    font-size: calc(1.5vmin + 15px);
+}
+
+.display-city h2 span {
+    font-size: calc(1.5vmin + 15px);
 }
