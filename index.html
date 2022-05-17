@@ -20,7 +20,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link rel="stylesheet" href="./assets/css/style.css">
-    <script src="./assets/js/script.js" defer></script>
+    <script src="./assets/js/script.js" type="module" defer></script>
 </head>
 
 <body>
@@ -31,19 +31,39 @@
         <section>
             <div class="search-container">
                 <form class="search-input">
-                    <input type="text">
+                    <input type="text" id="cities" name="cities" placeholder="ex: Paris, FR" autofocus>
                     <button>Research</button>
                 </form>
-                    <button class="geoloc">
+                    <button class="geoloc" type="submit">
                         <i class="fa-solid fa-earth-europe"></i>
                     </button>
             </div>
 
             <div class="display-city">
-                <h2>City: <span> Exemple de ville</span></h2>
+                <h2>Selected city : <br><span id="selected-city"></span></h2>
             </div>
         </section>
-        <section></section>
+
+        <div class="separate"></div>
+
+        <section>
+            <div class="display-container">
+                <article class="daily-result">
+                    <h2>Today</h2>
+                    <div class="display-daily-result"></div>
+                </article>
+                <aside class="next-days-result">
+                    <h2>5 days forecast</h2>
+                    <ul>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </aside>
+            </div>
+        </section>
     </main>
 </body>
 
