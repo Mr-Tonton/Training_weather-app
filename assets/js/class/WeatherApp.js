@@ -37,32 +37,22 @@ export class WeatherApp {
                 return res.json();
             }
         })
-        .then((value) => {
-            this.latitude = value[0].lat;
-            this.longitude = value[0].lon;
+        .then((locationValue) => {
+            this.latitude = locationValue[0].lat;
+            this.longitude = locationValue[0].lon;
 
-            fetch("https://api.openweathermap.org/data/2.5/weather?lat=" + this.latitude + "&lon=" + this.longitude + "&appid=" + key)
+            fetch("https://api.openweathermap.org/data/2.5/onecall?lat=" + this.latitude + "&lon=" + this.longitude + "&exclude=minutely,hourly,alerts&appid=" + key)
             .then((res) => {
                 if (res.ok) {
                     return res.json();
                 }
             })
-            .then((value) => {
-                console.log(value);
-                this.displayDaily(value.name, value.weather[0].icon, value.weather[0].description, value.main.temp, value.wind.speed, value.wind.deg);
+            .then((weatherValue) => {
+                console.log(weatherValue);
+                this.displayDaily(locationValue[0].name, weatherValue.current.weather[0].icon, weatherValue.current.weather[0].description, weatherValue.current.temp, weatherValue.current.wind_speed, weatherValue.current.wind_deg);
             })
             .catch(err => console.log(err.message))
 
-            fetch("http://api.openweathermap.org/data/2.5/forecast?lat=" + this.latitude + "&lon=" + this.longitude + "&appid=" + key)
-            .then((res) => {
-                if (res.ok) {
-                    return res.json();
-                }
-            })
-            .then((value) => {
-                console.log(value);
-            })
-            .catch(err => console.log(err.message))
         })
         .catch(err => console.log(err.message))
     }
