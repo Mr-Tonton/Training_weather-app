@@ -52,6 +52,7 @@
                     <h2>Today</h2>
                     <div class="display-daily-result">
                         <img id="img-daily">
+                        <h2 id="daily-date" class="daily-date"></h2>
                         <div class="weather-info">
                             <h3>Temp :</h3>
                             <p id="temp-value"></p>
@@ -61,53 +62,27 @@
                     </div>
                 </article>
                 <aside class="next-days-result">
-                    <h2>5 days forecast</h2>
-                    <ul>
-                        <li>
-                            <img class="img-forecast">
-                            <div class="weather-info">
-                                <h3>Temp :</h3>
-                                <p class="temp-forecast"></p>
-                                <h3>Wind :</h3>
-                                <p class="wind-forecast"></p>
-                        </li>
-                        <li>
-                            <img class="img-forecast">
-                            <div class="weather-info">
-                                <h3>Temp :</h3>
-                                <p class="temp-forecast"></p>
-                                <h3>Wind :</h3>
-                                <p class="wind-forecast"></p>
-                        </li>
-                        <li>
-                            <img class="img-forecast">
-                            <div class="weather-info">
-                                <h3>Temp :</h3>
-                                <p class="temp-forecast"></p>
-                                <h3>Wind :</h3>
-                                <p class="wind-forecast"></p>
-                        </li>
-                        <li>
-                            <img class="img-forecast">
-                            <div class="weather-info">
-                                <h3>Temp :</h3>
-                                <p class="temp-forecast"></p>
-                                <h3>Wind :</h3>
-                                <p class="wind-forecast"></p>
-                        </li>
-                        <li>
-                            <img class="img-forecast">
-                            <div class="weather-info">
-                                <h3>Temp :</h3>
-                                <p class="temp-forecast"></p>
-                                <h3>Wind :</h3>
-                                <p class="wind-forecast"></p>
-                        </li>
+                    <h2>5 days forecast (14h)</h2>
+                    <ul id="template-container">
                     </ul>
                 </aside>
             </div>
         </section>
     </main>
+
+
+    <!-- Template for insert forecast -->
+    <template id="template-li">
+        <li>
+            <img class="img-forecast">
+            <h2 class="day-forecast"></h2>
+            <div class="weather-info">
+                <h3>Temp :</h3>
+                <p class="temp-forecast"></p>
+                <h3>Wind :</h3>
+                <p class="wind-forecast"></p>
+        </li>
+    </template>
 </body>
 
 </html>

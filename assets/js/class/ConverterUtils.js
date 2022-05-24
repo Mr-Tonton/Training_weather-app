@@ -1,4 +1,4 @@
-export class Utils {
+export class ConverterUtils {
     constructor() {
     }
     
@@ -6,7 +6,7 @@ export class Utils {
         return kelvin - 273.15;
     }
 
-    static secondToKilometer = (metter) => {
+    static mSecondTokmHour = (metter) => {
         return metter / 1000 * 3600;
     }
 
