@@ -29,18 +29,20 @@
     </header>
     <main>
         <section>
-            <div class="search-container">
+            <div class="search-container" id="search-container">
                 <form class="search-input">
-                    <input type="text" id="cities" name="cities" placeholder="ex: Paris, FR" autofocus>
-                    <button>Research</button>
+                    <input type="text" id="research-input" name="research-input" placeholder="ex: Paris, FR" autofocus>
+                    <button id="research-btn">Research</button>
                 </form>
-                    <button class="geoloc" type="submit">
+                    <button id="geoloc-btn" class="geoloc" type="submit">
                         <i class="fa-solid fa-earth-europe"></i>
                     </button>
             </div>
 
+            <p class="error-msg" id="error-msg">Veuillez entrer une Ville et un Pays valide, au format: <br> "<em>Ville, Pays (code ISO, ex: FR) </em>"</p>
+
             <div class="display-city">
-                <h2>Selected city : <br><span id="selected-city"></span></h2>
+                <h2>Selected city : <br><span id="selected-city"></span><span id="selected-country"></span></h2>
             </div>
         </section>
 
