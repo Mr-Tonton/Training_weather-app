@@ -44,6 +44,7 @@ export class WeatherApp {
         }
     }
 
+    // API calls
     getLocationInfo(city, countryIso, apiKey) {
         fetch("http://api.openweathermap.org/geo/1.0/direct?q=" + city + "," + countryIso + "&appid=" + apiKey)
             .then((res) => {
@@ -111,7 +112,6 @@ export class WeatherApp {
 
 
     // Functions
-
     displayDaily(date, cityName, countryName, imgCode, altText, kelvinTemp, windSpeed, windDegree) {
         this.elements.dailyDate.textContent = new Date(date * 1000).toLocaleDateString();
         this.elements.displayCityName.textContent = cityName;
@@ -145,6 +145,7 @@ export class WeatherApp {
 
     initControls() {
 
+        // input event
         this.elements.researchInput.addEventListener("change", (e) => {
             let entrieToArray = (e.target.value).split(",");
             let formatEntrie = entrieToArray.map((entrie) => entrie.trim());
@@ -152,11 +153,13 @@ export class WeatherApp {
             this.country = formatEntrie[1];
         })
 
+        // button event
         this.elements.researchBtn.addEventListener("click", (e) => {
             e.preventDefault();
             this.getLocationInfo(this.city, this.country, this.apiKey);
         })
 
+        // geoloc event
         this.elements.geolocBtn.addEventListener("click", (e) => {
             e.preventDefault();
             if (navigator.geolocation) {

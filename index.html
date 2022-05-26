@@ -1,90 +1,91 @@
 <!DOCTYPE html>
 <html lang="fr">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather Forecast -by MrTonton</title>
-    <meta name="description"
-        content="Application météo avec prévision sur 5 jours, choix de la ville et géolocalisation">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Weather Forecast -by MrTonton</title>
+        <meta name="description"
+            content="Application météo avec prévision sur 5 jours, choix de la ville et géolocalisation">
 
-    <!-- ---- FONTS ---- -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Alata&family=Fredoka+One&display=swap" rel="stylesheet">
+        <!-- ---- FONTS ---- -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Alata&family=Fredoka+One&display=swap" rel="stylesheet">
 
-    <!-- ---- FONTAWESOME ---- -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <!-- ---- FONTAWESOME ---- -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+            integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <script src="./assets/js/script.js" type="module" defer></script>
-</head>
+        <link rel="stylesheet" href="./assets/css/style.css">
+        <script src="./assets/js/script.js" type="module" defer></script>
+    </head>
 
-<body>
-    <header>
-        <h1>WEATHER FORECAST -by MrTonton</h1>
-    </header>
-    <main>
-        <section>
-            <div class="search-container" id="search-container">
-                <form class="search-input">
-                    <input type="text" id="research-input" name="research-input" placeholder="ex: Paris, FR" autofocus>
-                    <button id="research-btn">Research</button>
-                </form>
+    <body>
+        <header>
+            <h1>PRÉVISION MÉTÉO - by MrTonton</h1>
+        </header>
+        <main>
+            <section>
+                <div class="search-container" id="search-container">
+                    <form class="search-input">
+                        <input type="text" id="research-input" name="research-input" placeholder="ex: Paris, FR" autofocus>
+                        <button id="research-btn">Recherche</button>
+                    </form>
                     <button id="geoloc-btn" class="geoloc" type="submit">
                         <i class="fa-solid fa-earth-europe"></i>
                     </button>
-            </div>
+                </div>
 
-            <p class="error-msg" id="error-msg">Veuillez entrer une Ville et un Pays valide, au format: <br> "<em>Ville, Pays (code ISO, ex: FR) </em>"</p>
+                <p class="error-msg" id="error-msg">Veuillez entrer une Ville et un Pays valide, au format: <br> "<em>Ville,
+                        Pays (code ISO, ex: FR) </em>"</p>
 
-            <div class="display-city">
-                <h2>Selected city : <br><span id="selected-city"></span><span id="selected-country"></span></h2>
-            </div>
-        </section>
+                <div class="display-city">
+                    <h2>Ville : <br><span id="selected-city"></span><span id="selected-country"></span></h2>
+                </div>
+            </section>
 
-        <div class="separate"></div>
+            <div class="separate"></div>
 
-        <section>
-            <div class="display-container">
-                <article class="daily-result">
-                    <h2>Today</h2>
-                    <div class="display-daily-result">
-                        <img id="img-daily">
-                        <h2 id="daily-date" class="daily-date"></h2>
-                        <div class="weather-info">
-                            <h3>Temp :</h3>
-                            <p id="temp-value"></p>
-                            <h3>Wind : </h3>
-                            <p id="wind-value"></p>
+            <section>
+                <div class="display-container">
+                    <article class="daily-result">
+                        <h2>Aujourd'hui</h2>
+                        <div class="display-daily-result">
+                            <img id="img-daily">
+                            <h2 id="daily-date" class="daily-date"></h2>
+                            <div class="weather-info">
+                                <h3>Temp :</h3>
+                                <p id="temp-value"></p>
+                                <h3>Vent : </h3>
+                                <p id="wind-value"></p>
+                            </div>
                         </div>
-                    </div>
-                </article>
-                <aside class="next-days-result">
-                    <h2>5 days forecast (14h)</h2>
-                    <ul id="template-container">
-                    </ul>
-                </aside>
-            </div>
-        </section>
-    </main>
+                    </article>
+                    <aside class="next-days-result">
+                        <h2>Prévisions sur 5 jours (14h)</h2>
+                        <ul id="template-container">
+                        </ul>
+                    </aside>
+                </div>
+            </section>
+        </main>
 
 
-    <!-- Template for insert forecast -->
-    <template id="template-li">
-        <li>
-            <img class="img-forecast">
-            <h2 class="day-forecast"></h2>
-            <div class="weather-info">
-                <h3>Temp :</h3>
-                <p class="temp-forecast"></p>
-                <h3>Wind :</h3>
-                <p class="wind-forecast"></p>
-        </li>
-    </template>
-</body>
+        <!-- Template for insert forecast -->
+        <template id="template-li">
+            <li>
+                <img class="img-forecast">
+                <h2 class="day-forecast"></h2>
+                <div class="weather-info">
+                    <h3>Temp :</h3>
+                    <p class="temp-forecast"></p>
+                    <h3>Vent :</h3>
+                    <p class="wind-forecast"></p>
+            </li>
+        </template>
+    </body>
 
 </html>
